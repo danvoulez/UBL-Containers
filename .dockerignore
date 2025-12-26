@@ -1,0 +1,101 @@
+# =============================================================================
+# Docker Ignore - Exclude unnecessary files from Docker build context
+# =============================================================================
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+!README.md
+ARCHITECTURE.md
+CONTRIBUTING.md
+PHILOSOPHY.md
+HARDENING.md
+DOCS_MANIFEST.*
+SPEC_MANIFEST.json
+MEGA_MANIFEST.json
+specs/
+docs/
+
+# Development files
+.env
+.env.*
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+target/
+dist/
+build/
+node_modules/
+.next/
+out/
+
+# Logs
+*.log
+logs/
+
+# Test files
+test-*.sh
+*.test.js
+*.test.ts
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Infra (development only)
+infra/
+containers/
+
+# Scripts (development only)
+scripts/
+tools/
+check.sh
+
+# Frontend/Mind (if not needed for server)
+mind/
+clients/
+templates/
+
+# Test files
+kernel/rust/tests/
+*.rs.bk
+
+# Lock files (Cargo.lock is needed for reproducible builds)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# WebAuthn test files
+webauthn-test.html
+
+# Kubernetes/Docker compose
+docker-compose.yml
+*.yaml
+*.yml
+!railway.toml
+
+# PR and status docs
+PR*.md
+*_STATUS.md
+*_COMPLETE.md
