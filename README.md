@@ -176,11 +176,46 @@ cargo test --workspace
 
 ---
 
+## 🚂 Deployment
+
+### Railway (Recommended)
+
+Deploy to Railway with one click:
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/ubl-server)
+
+Or manually:
+
+1. Create a new project on [Railway](https://railway.app)
+2. Add PostgreSQL database
+3. Connect your GitHub repository
+4. Set environment variables (`WEBAUTHN_RP_ID`, `WEBAUTHN_ORIGIN`)
+5. Deploy automatically
+
+See [RAILWAY.md](RAILWAY.md) for detailed instructions.
+
+### Docker
+
+```bash
+# Build the image
+docker build -t ubl-server .
+
+# Run with PostgreSQL
+docker run -p 8080:8080 \
+  -e DATABASE_URL=postgres://user:pass@host:5432/db \
+  -e WEBAUTHN_RP_ID=localhost \
+  -e WEBAUTHN_ORIGIN=http://localhost:8080 \
+  ubl-server
+```
+
+---
+
 ## 📚 Documentation
 
 - [ARCHITECTURE.md](ARCHITECTURE.md) — System design
 - [PHILOSOPHY.md](PHILOSOPHY.md) — Principles & rationale
 - [CONTRIBUTING.md](CONTRIBUTING.md) — How to contribute
+- [RAILWAY.md](RAILWAY.md) — Railway deployment guide
 - [specs/](specs/) — Frozen specifications (v1.0)
 
 ---
