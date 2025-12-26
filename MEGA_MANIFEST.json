@@ -1,0 +1,15 @@
+{
+  "generated_at": "2025-12-26 10:40:14",
+  "merge_order": [
+    "/mnt/data/ubl2-blueprint-starter-reviewed.zip",
+    "/mnt/data/ubl-headless-orchestrator-v4.zip",
+    "/mnt/data/ubl-observability-orchestrator-plus-repo.zip",
+    "/mnt/data/ubl-id-metrics-ledger-jwt-pack.zip"
+  ],
+  "strategy": "overlay (last wins)",
+  "notes": [
+    "This mega pack combines blueprint + headless orchestrator + repo/observability + id metrics/JWT/ledger atoms.",
+    "Place contents at your monorepo root, preserving paths.",
+    "See kernel/rust/ubl-server/src/WIRING_NOTES.md for final wiring."
+  ]
+}

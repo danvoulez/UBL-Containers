@@ -1,0 +1,29 @@
+{
+  "containers": [
+    {
+      "name": "C.Messenger",
+      "role": "green",
+      "id": "<fill>"
+    },
+    {
+      "name": "C.Artifacts",
+      "role": "green",
+      "id": "<fill>"
+    },
+    {
+      "name": "C.Policy",
+      "role": "blue",
+      "id": "<fill>"
+    },
+    {
+      "name": "C.Pacts",
+      "role": "blue",
+      "id": "<fill>"
+    },
+    {
+      "name": "C.Runner",
+      "role": "black",
+      "id": "<fill>"
+    }
+  ]
+}

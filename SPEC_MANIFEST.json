@@ -1,0 +1,171 @@
+{
+  "manifest_version": "1.0",
+  "freeze_date": "2025-12-25",
+  "system": "Universal Business Ledger (UBL)",
+  "version": "2.0.0",
+  "status": "NORMATIVE",
+  "change_control": "STRICT (no retroactive changes)",
+  
+  "specifications": [
+    {
+      "name": "SPEC-UBL-CORE",
+      "version": "1.0",
+      "status": "FROZEN",
+      "path": "/Users/voulezvous/UBL WAR/UBL-backend/SPEC-UBL-CORE v1.ini",
+      "hash_algorithm": "BLAKE3",
+      "hash": "pending",
+      "signature_algorithm": "Ed25519",
+      "signature": "pending",
+      "description": "Core ontology and fundamental axioms"
+    },
+    {
+      "name": "SPEC-UBL-ATOM",
+      "version": "1.0",
+      "status": "NORMATIVE",
+      "path": "crates/ubl-atom/src/lib.rs",
+      "hash_algorithm": "BLAKE3",
+      "hash": "pending",
+      "signature_algorithm": "Ed25519",
+      "signature": "pending",
+      "description": "Canonical JSON serialization (JSON✯Atomic v1.0 binding)"
+    },
+    {
+      "name": "SPEC-UBL-LINK",
+      "version": "1.0",
+      "status": "NORMATIVE",
+      "path": "crates/ubl-link/src/lib.rs",
+      "hash_algorithm": "BLAKE3",
+      "hash": "pending",
+      "signature_algorithm": "Ed25519",
+      "signature": "pending",
+      "description": "Tangency interface between Mind and Body"
+    },
+    {
+      "name": "SPEC-UBL-KERNEL",
+      "version": "1.0",
+      "status": "NORMATIVE",
+      "path": "crates/ubl-kernel/src/lib.rs",
+      "hash_algorithm": "BLAKE3",
+      "hash": "pending",
+      "signature_algorithm": "Ed25519",
+      "signature": "pending",
+      "description": "Cryptographic primitives (BLAKE3 + Ed25519)"
+    },
+    {
+      "name": "SPEC-UBL-LEDGER",
+      "version": "1.0",
+      "status": "NORMATIVE",
+      "path": "crates/ubl-ledger/src/lib.rs",
+      "hash_algorithm": "BLAKE3",
+      "hash": "pending",
+      "signature_algorithm": "Ed25519",
+      "signature": "pending",
+      "description": "Append-only immutable history"
+    },
+    {
+      "name": "SPEC-UBL-MEMBRANE",
+      "version": "1.0",
+      "status": "NORMATIVE",
+      "path": "crates/ubl-membrane/src/lib.rs",
+      "hash_algorithm": "BLAKE3",
+      "hash": "pending",
+      "signature_algorithm": "Ed25519",
+      "signature": "pending",
+      "description": "Validation layer (<1ms, semantically blind)"
+    },
+    {
+      "name": "UBL-ATOM-BINDING",
+      "version": "1.0",
+      "status": "NORMATIVE",
+      "path": "specs/ubl-atom/UBL-ATOM-BINDING.md",
+      "hash_algorithm": "BLAKE3",
+      "hash": "pending",
+      "signature_algorithm": "Ed25519",
+      "signature": "pending",
+      "description": "Binding to JSON✯Atomic v1.0"
+    }
+  ],
+  
+  "implementations": {
+    "body": {
+      "language": "Rust",
+      "edition": "2021",
+      "crates": [
+        "ubl-atom",
+        "ubl-link",
+        "ubl-kernel",
+        "ubl-ledger",
+        "ubl-membrane",
+        "ubl-server"
+      ],
+      "build_command": "cargo build --release",
+      "test_command": "cargo test --workspace"
+    },
+    "mind": {
+      "language": "TypeScript",
+      "packages": [
+        "ubl-cortex"
+      ],
+      "build_command": "npm install && npx tsc",
+      "test_command": "npm test"
+    }
+  },
+  
+  "conformance_tests": {
+    "path": "tests/conformance_tests.rs",
+    "status": "PASSING",
+    "test_count": 29,
+    "coverage": [
+      "Membrane rejections (V1-V7)",
+      "Ledger chain validation",
+      "Physics delta i128 support",
+      "Pact field optional",
+      "IntentClass serialization",
+      "Hash determinism",
+      "Genesis hash format"
+    ]
+  },
+  
+  "canonical_errors": {
+    "membrane": [
+      "InvalidVersion",
+      "InvalidSignature",
+      "InvalidTarget",
+      "RealityDrift",
+      "SequenceMismatch",
+      "PhysicsViolation",
+      "PactViolation",
+      "UnauthorizedEvolution"
+    ]
+  },
+  
+  "invariants": [
+    "Fail-closed by default",
+    "TDLN is deterministic",
+    "ubl-atom ≡ JSON✯Atomic v1.0 (NO domain tag)",
+    "atom_hash = JSON✯Atomic.hash(bytes) exactly",
+    "ubl-link is the only portal",
+    "signing_bytes excludes pact/author_pubkey/signature",
+    "Membrane validates without semantics",
+    "Ledger is append-only",
+    "State is derived from History",
+    "physics_delta is i128",
+    "Pact is optional",
+    "IntentClass uses PascalCase",
+    "8 canonical errors (MEMBRANE)"
+  ],
+  
+  "verification": {
+    "build_status": "SUCCESS",
+    "test_status": "PASSING",
+    "warnings": "10 (missing docs)",
+    "last_verified": "2025-12-25T17:22:00Z"
+  },
+  
+  "notes": [
+    "All specs are FROZEN - no retroactive changes allowed",
+    "Markdown lint warnings in binding doc are intentional (math formulas)",
+    "Mock signatures allowed in development (signature != 'mock' for production)",
+    "Conformance tests verify SPEC-UBL-LINK v1.0 §3-7"
+  ]
+}

@@ -1,0 +1,12 @@
+[package]
+name = "ubl-pact"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "UBL Pact - Authority and consensus (SPEC-UBL-PACT v1.0)"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+blake3 = { workspace = true }
