@@ -2,7 +2,7 @@
 
 **Universal Business Ledger — Trustworthy Business Records with Cryptographic Proof**
 
-[![Rust](https://img.shields.io/badge/rust-1.75%2B-orange.svg)](https://www.rust-lang.org/)
+[![Rust](https://img.shields.io/badge/rust-1.82%2B-orange.svg)](https://www.rust-lang.org/)
 [![PostgreSQL](https://img.shields.io/badge/postgres-16%2B-blue.svg)](https://www.postgresql.org/)
 [![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)](LICENSE)
 
@@ -32,7 +32,7 @@ UBL is an **append-only ledger** for business operations where every record is:
 
 ### Prerequisites
 
-- Rust 1.75+ (`rustup`, `cargo`)
+- Rust 1.82+ (`rustup`, `cargo`)
 - PostgreSQL 16+
 - Node.js 20+ (optional, for TypeScript components)
 
